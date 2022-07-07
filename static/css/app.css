@@ -1,0 +1,104 @@
+html {
+    height: 100%
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+    background-image: url("https://img.freepik.com/free-photo/hr-human-resources-recruitment-employment-hand-touch-digital-screen-hologram-human-leader-sign-city-light-blurred-background-peoples-relation-organisation-structure_486333-4177.jpg?w=2000");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.navbar-wrapper{
+    height: 65px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(5,1,71);
+    background: linear-gradient(90deg, rgba(5,1,71,1) 0%, rgba(9,9,121,1) 26%, rgba(20,75,87,1) 95%);
+}
+
+.logo{
+    margin-left: 35px;
+    color: white;
+}
+.login{
+    margin-right: 35px;
+}
+.login-btn{
+    border: 1px solid rgb(99, 136, 202);
+    text-decoration: none;
+    border-radius: 15px;
+    color: white;
+    padding: 15px;
+}
+.isveren_btn{
+    background-color: #6388ca;
+}
+.user-login-wrapper{
+    width: 50%;
+    margin: 25px auto;
+    /*border: 1px solid #fff;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    background-color: white;
+    width: 350px;
+    height: 300px;
+    border-radius: 25px;
+}
+.card-title{
+    padding: 25px;
+    border-bottom: 1px solid #ddd;
+}
+.card-container{
+    margin-top: 25px;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.form-item label { margin-left: 7px; width: 15%}
+.form-item input[type="text"],
+.form-item input[type="password"],
+.form-item input[type="date"],
+.form-item select {width: 90%; height: 35px; border: 1px solid #e8e8e8; border-radius: 7px}
+
+.col-md-1{
+    width: 45%;
+}
+.col-md-3{
+    width: 55%;
+}
+.aling-center{
+    align-items: center;
+}
+.justify-center{
+    justify-content: center;
+}
+
+.mt-3{
+    margin-top: 1rem
+}
+.mt-4{
+    margin-top: 2rem
+}
+
+
+.form-btn{
+    background-color: #6388ca;
+    border: 1px solid  #6388ca;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 15px;
+}
+.form-btn:hover{
+    background-color: white;
+    color: #000;
+}
