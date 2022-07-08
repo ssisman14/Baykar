@@ -1,2 +1,9 @@
 from api.serializers.user import *
-
+from api.serializers.company import *
+from api.serializers.related_company_user import *
+from api.serializers.school import *
+from api.serializers.school import *
+from api.serializers.yetenek import *
+from api.serializers.aday_deneyimleri import *
+from api.serializers.aday import *
+from api.serializers.related_aday_yetenek import *

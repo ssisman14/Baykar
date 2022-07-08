@@ -23,6 +23,14 @@ from api.views import *
 
 router = routers.DefaultRouter()
 router.register(r'user', UserViewSet)
+router.register(r'company', CompanyViewSet)
+router.register(r'related_company_user', RelatedCompanyUserViewSet)
+router.register(r'school',SchoolViewSet)
+router.register(r'related_school_user', RelatedUserSchoolViewSet)
+router.register(r'yetenek',YetenekViewSet)
+router.register(r'aday_deneyimleri', AdayDeneyimleriViewSet),
+router.register(r'aday', AdayViewSet)
+router.register(r'releted_aday_yetenek', RelatedAdayYetenekViewSet)
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
@@ -30,6 +38,6 @@ urlpatterns = [
                   path('', app, name='app'),
                   path('user_login/', user_login, name='user_login'),
                   path('user_sing_in/', user_sing_in, name='user_sing_in'),
-                  path('api/api-token-auth/', CustomAuthToken.as_view(), name='api_token_auth'),
+                  path('logout/', logout_user, name='logout'),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

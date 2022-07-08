@@ -10,27 +10,31 @@
                 Üye Girişi
             </div>
             <div class="card-container">
-                <form id="user_login_form">
-                    <!-- Email -->
+                 <form id="user_login_form" method="post">
+                    {% csrf_token %}
+
+                    <!-- User Name -->
                     <div class="form-item row aling-center">
                         <div class="col-md-1">
-                            <label for="login_username">Kullanıcı Adı:</label>
+                            <label for="{{ form.username.id_for_label }}">Kullanıcı Adı</label>
                         </div>
                         <div class="col-md-3">
-                            <input type="text" name="username" id="login_username" required>
+                            {{ form.username }}
                         </div>
                     </div>
-                    <!-- /Email -->
+                    <!-- /User Name -->
+
                     <!-- Password -->
                     <div class="form-item row aling-center mt-3">
                         <div class="col-md-1">
-                            <label for="login_password">Parola:</label>
+                            <label for="{{ form.password.id_for_label }}">Şifre</label>
                         </div>
                         <div class="col-md-3">
-                            <input type="password" name="password" id="login_password" required>
+                            {{ form.password }}
                         </div>
                     </div>
                     <!-- /Password -->
+
                     <div class="row mt-4 aling-center justify-center">
                         <button type="submit" class="form-btn">Giriş Yap</button>
                     </div>
@@ -44,6 +48,6 @@
 
 {% endblock %}
 {% block scripts %}
-    <script src="{% static 'js/login_user.js' %}"></script>
+{#    <script src="{% static 'js/login_user.js' %}"></script>#}
 
 {% endblock  %}

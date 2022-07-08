@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-i4g+pzqfe8$^1*l07!r4f_^gv4-dsj-gsrc6xcgzp%!akogugt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,8 +41,6 @@ INSTALLED_APPS = [
     'webHMTL.apps.WebhmtlConfig',
     'rest_framework',
     'django_filters',
-    'rest_framework_api_key',
-    'rest_framework.authtoken'
 
 ]
 
@@ -57,12 +55,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-REST_FRAMEWORK = {
-    "DEFAULT_PERMISSION_CLASSES": [
-        'rest_framework.permissions.IsAuthenticated',
-    ],
-    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
-}
+# REST_FRAMEWORK = {
+#     "DEFAULT_PERMISSION_CLASSES": [
+#         'rest_framework.permissions.IsAuthenticated',
+#     ],
+#     'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
+# }
 
 ROOT_URLCONF = 'Baykar.urls'
 
@@ -156,5 +154,4 @@ API_KEY_CUSTOM = 'b227558af5b506b1b7ec353b703c694126aa6759'
 API_BASE_URL = "http://127.0.0.1:8014/api"
 API_URL_SUFFIX = {
     "user": "user/",
-    "token": "/api-token-auth/",
 }
