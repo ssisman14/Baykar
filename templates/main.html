@@ -3,3 +3,31 @@
 
 <!-- Title -->
 {% block title %}Anasayfa{% endblock %}
+
+
+<!-- Body -->
+{% block body %}
+
+    <div class="search_wrapper">
+        <div id="search_title" class="search_title">
+            Senin için burada <span id="ilan_count"> </span> ilan var!
+        </div>
+        <div class="search_body">
+            <div class="form-item row aling-center mt-3">
+                <div class="col-md-1">
+                    <label>Ara</label>
+                </div>
+                <div class="col-md-3">
+                    <input type="text"> 
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+<!-- Body -->
+
+{% block scripts %}
+    <script src="{% static 'js/main_page.js' %}"></script>
+{% endblock %}

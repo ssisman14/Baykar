@@ -3,17 +3,19 @@ class App{
         this.button = {
             navbar_user_btn : $('#user')
         }
+        this.api_url = {
+            ilan : 'http://127.0.0.1:8014/api/ilan/?format=json'
+        }
     }
-    ajaxRequest(url, data, cache = true, contentType = 'application/x-www-form-urlencoded; charset=UTF-8', processData = true) {
+    ajaxRequest(url, data,type, cache = true, contentType = 'application/x-www-form-urlencoded; charset=UTF-8', processData = true) {
         return new Promise((resolve, reject) => {
             $.ajax({
                 url: url,
-                type: "POST",
+                type: type,
                 cache: cache,
                 contentType: contentType,
                 processData: processData,
                 data: data,
-                headers: token,
                 success: function (data) {
                     resolve(data);
                 },

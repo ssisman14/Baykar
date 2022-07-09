@@ -1,5 +1,4 @@
 from rest_framework import viewsets, filters
-from rest_framework.permissions import IsAdminUser
 from api.models import RelatedUserSchool
 from api.serializers.related_school_user import RelatedUserSchoolSerializers, RelatedUserSchoolForGetSerializers
 from django_filters.rest_framework import DjangoFilterBackend

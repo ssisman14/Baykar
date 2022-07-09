@@ -30,7 +30,10 @@ router.register(r'related_school_user', RelatedUserSchoolViewSet)
 router.register(r'yetenek',YetenekViewSet)
 router.register(r'aday_deneyimleri', AdayDeneyimleriViewSet),
 router.register(r'aday', AdayViewSet)
-router.register(r'releted_aday_yetenek', RelatedAdayYetenekViewSet)
+router.register(r'related_aday_yetenek', RelatedAdayYetenekViewSet)
+router.register(r'related_aday_kullanici', RelatedAdayKullaniciViewSet)
+router.register(r'related_aday_ilan', RelatedUserIlanViewSet)
+router.register(r'ilan', IlanViewSet)
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
