@@ -7,7 +7,8 @@ class App{
             ilan : 'http://127.0.0.1:8014/api/ilan/?format=json',
             create_ilan :'http://127.0.0.1:8014/api/ilan/',
             ilan_yayinlayan_filter: `http://127.0.0.1:8014/api/ilan/?format=json&yayinlayan=${user_id}`,
-            company: 'http://127.0.0.1:8014/api/company/?format=json'
+            company: 'http://127.0.0.1:8014/api/company/?format=json',
+            ilan_kullanici: 'http://127.0.0.1:8014/api/related_aday_ilan/',
         }
     }
     ajaxRequest(url, data,type, cache = true, contentType = 'application/x-www-form-urlencoded; charset=UTF-8', processData = true) {

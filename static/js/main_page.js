@@ -24,7 +24,7 @@ class Main_Page extends App{
 
             }
         }
-        this.user_advert_arr = [];
+        this.user_ilan_arr = [];
         this.search();
         this.getİlan();
     }
@@ -62,10 +62,19 @@ class Main_Page extends App{
             const action_element =
                 user_durum === "üye"
                     ?
-                    $(`
+                    this.user_ilan_arr.includes(e.id)
+                        ?
+                        $(`
                         <div class="main_ilan-item-actions">
                             <a id="ilan_detay" class="pointer" data-id="${e.id}" onclick="main_page.openDetailModal(this.dataset.id)"></i> Detay</a>
-                            <a class="total_apply pointer" ><i class="fa fa-circle-check"></i> Başvur</a>
+                            <a><i class="fa fa-circle-check"></i> Başvuruldu</a>
+                        </div>
+                        `)
+                        :
+                        $(`
+                        <div class="main_ilan-item-actions">
+                            <a id="ilan_detay" class="pointer" data-id="${e.id}" onclick="main_page.openDetailModal(this.dataset.id)"></i> Detay</a>
+                            <a class="total_apply pointer" data-id="${e.id}" onclick="main_page.ilanBasvuru(this.dataset.id)"><i class="fa fa-circle-check"></i> Başvur</a>
                         </div>
                         `)
                     :
@@ -80,10 +89,19 @@ class Main_Page extends App{
     }
 
     getİlan(){
-        this.ajaxRequest(this.api_url.ilan, '', 'GET')
-            .then(res => {
-                this.buildList(res)
+        this.ajaxRequest(
+            'http://127.0.0.1:8014/api/related_aday_ilan/?format=json',
+            '',
+            'GET'
+        )
+            .then(res => { res.map(e => this.user_ilan_arr.push(e.ilan.id))})
+            .then(() => {
+                this.ajaxRequest(this.api_url.ilan, '', 'GET')
+                    .then(res => {
+                        this.buildList(res)
+                    })
             })
+
     }
 
     openDetailModal(id){
@@ -115,12 +133,21 @@ class Main_Page extends App{
             'GET'
         )
             .then(res => {
-                 this.buildList(res)
+                this.buildList(res)
             })
 
+    }
 
-        console.log(type, city)
-
+    ilanBasvuru(id){
+        this.ajaxRequest(
+            this.api_url.ilan_kullanici,
+            {
+                user : user_id,
+                ilan: id
+            },
+            'POST'
+        )
+            .then(res => console.log(res))
     }
 }
 
