@@ -44,6 +44,6 @@ urlpatterns = [
                   path('user_sing_in/', user_sing_in, name='user_sing_in'),
                   path('logout/', logout_user, name='logout'),
                   path('ilanlarim/', ilanlarim, name='ilanlarim'),
-                  path('accounts/', include('django.contrib.auth.urls'))
+
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

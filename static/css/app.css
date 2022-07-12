@@ -170,6 +170,10 @@ body {
     width: 50%;
 }
 
+.col-md-1{
+    width: 150px;
+}
+
 #ilanlar{
     width: 100%;
 }
