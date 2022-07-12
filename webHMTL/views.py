@@ -11,6 +11,10 @@ def app(request):
     return render(request, 'main.html')
 
 
+def ilanlarim(request):
+    return render(request, 'ilan.html')
+
+
 def user_login(request):
     form = LoginForm(request.POST or None)
 
@@ -51,6 +55,32 @@ def user_sing_in(request):
         "form": form
     }
     return render(request, 'sing_in_user.html', context)
+
+
+def login_isveren(request):
+
+    form = LoginForm(request.POST or None)
+    context = {
+        "form": form
+    }
+    if form.is_valid():
+
+        username = form.cleaned_data.get('username')
+        password = form.cleaned_data.get('password')
+        user = authenticate(username=username, password=password)
+        user_info = User.objects.get(username=username)
+
+        if user is None:
+            messages.info(request, 'kullanıcı adı veya şifre hatalı')
+            return render(request, 'login_user.html', context)
+
+        messages.success(request, 'Giriş Yapıldı')
+
+        if user_info.durum == 'isveren':
+            login(request, user)
+            return redirect('app')
+
+    return render(request, 'login_isveren.html', context)
 
 
 def logout_user(request):

@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% load  static %}
+
+<!-- Title -->
+{% block title %}İlanlarım{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href={% static 'css/ilanlarim.css' %}>
+{% endblock %}
+
+
+{% block body %}
+
+    <div id="ilan-panel" class="row">
+        {#        <div class="ilan-item">#}
+        {#            <div class="ilan-item-body">#}
+        {#                <span >Django Developer</span>#}
+        {#                <span >Ankara</span>#}
+        {#                <span >Senior</span>#}
+        {#                <span >12.05.2022</span>#}
+        {#            </div>#}
+        {#            <div class="ilan-item-actions">#}
+        {#                <a class="ilan_detail" ><i class="fa fa-circle-info"></i> Detay</a>#}
+        {#                <a class="total_apply" ><i class="fa fa-circle-check"></i> 1 başvuru</a>#}
+        {#            </div>#}
+        {#        </div>#}
+    </div>
+    <div id="add_ilan">
+        <span class="add_ilan_button" onclick="ilanlarim_page.showCreateModal()">
+            İlan Ekle
+        </span>
+    </div>
+
+
+        {% include 'modal/ilanlar/create_ilan.html' %}
+
+
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/ilanlarim.js' %}"></script>
+{% endblock %}

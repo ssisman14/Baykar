@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}Üye Girişi{% endblock %}
+
+{% block body %}
+
+    <div class="user-login-wrapper">
+        <div class="card">
+            <div class="card-title">
+                İş Veren Girişi
+            </div>
+            <div class="card-container">
+                 <form id="user_login_form" method="post">
+                    {% csrf_token %}
+
+                    <!-- User Name -->
+                    <div class="form-item row aling-center">
+                        <div class="col-md-1">
+                            <label for="{{ form.username.id_for_label }}">Kullanıcı Adı</label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.username }}
+                        </div>
+                    </div>
+                    <!-- /User Name -->
+
+                    <!-- Password -->
+                    <div class="form-item row aling-center mt-3">
+                        <div class="col-md-1">
+                            <label for="{{ form.password.id_for_label }}">Şifre</label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.password }}
+                        </div>
+                    </div>
+                    <!-- /Password -->
+
+                    <div class="row mt-4 aling-center justify-center">
+                        <button type="submit" class="form-btn">Giriş Yap</button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
+{% block scripts %}
+{#    <script src="{% static 'js/login_user.js' %}"></script>#}
+
+{% endblock  %}

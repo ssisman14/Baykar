@@ -8,7 +8,7 @@ class IlanViewSet(viewsets.ModelViewSet):
     queryset = Ilan.objects.all()
     serializer_class = IlanSerializers
     filter_backends = (DjangoFilterBackend, filters.OrderingFilter,)
-    filterset_fields = ('yayinlayan', 'company', 'id', 'type', 'city')
+    filterset_fields = ('yayinlayan', 'company', 'id', 'type', 'city', 'title')
 
     def get_serializer_class(self):
         if self.request:
