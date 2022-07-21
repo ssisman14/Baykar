@@ -16,3 +16,25 @@ pip install -r requirements.txt
 python manage.py runserver:8014    
 ```
 8014 portunda islem yapınız lütfen.
+
+
+#Ekran Resimleri
+
+### Ana Sayfa
+![Alt text](ekran_resimleri/ana_sayfa.png?raw=true "Ana Sayfa")
+
+### Üye Ol
+![Alt text](ekran_resimleri/üye_ol.png?raw=true "Üye Ol")
+
+### İş veren girişi
+![Alt text](ekran_resimleri/is_veren_girisi.png?raw=true "İs veren Girişi")
+
+### Üye tarafından login olunmuş ana sayfa görünümü
+![Alt text](ekran_resimleri/login_üye_ana_sayfa.png?raw=true "Giriş yapılmış ana sayfa")
+
+### Filtereleme yapılmış ana sayfa
+![Alt text](ekran_resimleri/login_üye_filteleme.png?raw=true "Filtreleme")
+
+
+###  işveren İlan girişi
+![Alt text](ekran_resimleri/isveren_ilan_ekleme.png?raw=true "İlan ekleme")

@@ -154,8 +154,3 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-API_KEY_CUSTOM = 'b227558af5b506b1b7ec353b703c694126aa6759'
-API_BASE_URL = "http://127.0.0.1:8014/api"
-API_URL_SUFFIX = {
-    "user": "user/",
-}
