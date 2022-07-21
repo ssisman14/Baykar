@@ -27,7 +27,7 @@ python manage.py runserver:8014
 ![Alt text](ekran_resimleri/üye_ol.png?raw=true "Üye Ol")
 
 ### Üye Girişi
-![Alt text](ekran_resimleri/üye_girişi2.png?raw=true "Üye Girişi")
+![Alt text](ekran_resimleri/üye_girişi2.PNG?raw=true "Üye Girişi")
 
 ### Sifre sıfırlama ekranı
 ![Alt text](ekran_resimleri/sifre_sıfırlama_ekranı.PNG?raw=true "Şifre sıfırlama ekranı")
@@ -38,8 +38,13 @@ python manage.py runserver:8014
 ### Gelen Mail
 ![Alt text](ekran_resimleri/email.PNG?raw=true "tek kullanımlık sifre")
 
+### Yeni şifrenin oluşturulması
+![Alt text](ekran_resimleri/yeni_sifrenin_olusturulması.PNG?raw=true "İs veren Girişi")
+
 ### İş veren girişi
 ![Alt text](ekran_resimleri/is_veren_girisi.png?raw=true "İs veren Girişi")
+
+
 
 ### Üye tarafından login olunmuş ana sayfa görünümü
 ![Alt text](ekran_resimleri/login_üye_ana_sayfa.png?raw=true "Giriş yapılmış ana sayfa")
