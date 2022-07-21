@@ -1,0 +1,96 @@
+{% extends 'layout.html' %}
+{% load static%}
+
+{% block body %}
+    <div class="user-login-wrapper">
+        <div class="card_forgot_pass">
+            <div class="card-title">
+                Şifre Sıfırlama
+            </div>
+            <div class="card-container">
+                <div id="result">
+
+                </div>
+
+                    <!-- Send email to username -->
+                    <div id="forgot-container">
+                        <!-- User Name -->
+                        <div class="form-item row aling-center">
+                            <div class="col-md-1">
+                                <label>Kullanıcı Adı</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" id="forgot_pass_user" name="username" placeholder="Lütfen Kullanıcı adınızı Giriniz.">
+                            </div>
+                        </div>
+                        <!-- /User Name -->
+                        <div class="row mt-4 aling-center justify-center">
+                            <button class="form-btn" onclick="forgot_pass.getPass()">Gönder</button>
+                        </div>
+                    </div>
+                    <!-- /Send email to username -->
+
+
+                    <!-- password verification -->
+                    <div id="forgot-after-otp" style="display: none">
+                        <!-- OTP-->
+                        <div class="form-item row aling-center">
+                            <div class="col-md-1">
+                                <label>Şifre</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="number" id="uotp" placeholder="Lütfen tek kullanımlık şifreninizi giriniz.">
+                            </div>
+                        </div>
+                        <!-- /OTP -->
+                        <div class="row mt-4 aling-center justify-center">
+                            <button class="form-btn" onclick="forgot_pass.matchotp()">Enter</button>
+                        </div>
+                    </div>
+                    <!-- /password verification -->
+
+
+                <form id="forgot_password" method="post">
+                    {% csrf_token %}
+
+                    <!-- password change -->
+                    <div id="change-password" style="display: none">
+                        <!-- Password-->
+                        <div class="form-item row aling-center">
+                            <div class="col-md-1">
+                                <label>Yeni Şifreniz:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="password" id="uotp" name="npassword" placeholder="Lütfen yeni şifrenizi giriniz.">
+                            </div>
+                        </div>
+                        <!-- /OTP -->
+                        <div class="row mt-4 aling-center justify-center">
+                            <input type="submit" value="Change My Password">
+                        </div>
+                    </div>
+                    <!-- /password verification -->
+
+
+                    <input type="hidden" name="username" id="h_username">
+                    <input type="hidden" name="realopt" id="realopt">
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    {% if status %}
+        <script>
+            alert("{{status}}");
+            window.location="/"
+        </script>
+    {% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/forgot_pass.js' %}"></script>
+
+{% endblock %}

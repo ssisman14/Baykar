@@ -44,6 +44,8 @@ urlpatterns = [
                   path('user_sing_in/', user_sing_in, name='user_sing_in'),
                   path('logout/', logout_user, name='logout'),
                   path('ilanlarim/', ilanlarim, name='ilanlarim'),
+                  path('forgotpass/', forgot_password, name='forgotpass'),
+                  path('reset_password/', reset_password, name='reset_password'),
 
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

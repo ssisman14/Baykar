@@ -53,6 +53,14 @@ body {
     height: 300px;
     border-radius: 25px;
 }
+
+.card_forgot_pass{
+    background-color: white;
+    width: 400px;
+    height: 230px;
+    border-radius: 25px;
+}
+
 .card-title{
     padding: 25px;
     border-bottom: 1px solid #ddd;
@@ -211,4 +219,10 @@ body {
 
 .detay_modal_label{
     width: 120px;
+}
+
+#result{
+    padding-left: 4px;
+    background-color: crimson;
+    color: white;
 }
